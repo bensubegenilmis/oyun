@@ -4,7 +4,11 @@ import GameStartScreen from './screens/GameStartScreen';
 
 export default function App() {
   return (
-    <GameStartScreen />
+
+    <View style = {styles.container}>
+      <GameStartScreen />
+    </View>
+    
   
  
   );
@@ -12,9 +16,8 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+   backgroundColor:'blue',
+   flex:1,
+  
   },
 });
