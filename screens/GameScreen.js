@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React, { useState } from 'react';
 import Title from '../components/Title';
+import ComputerNumber from '../components/ComputerNumber';
 
 
 
@@ -27,7 +28,7 @@ export default function GameScreen({userNumber}) {
   return (
     <View style = {styles.container}>
       <Title>Bilgisayar Tahmini</Title>
-      <Text>{currentGuess}</Text>
+      <ComputerNumber>{currentGuess}</ComputerNumber>
       <View>
       <Text>Altında mı üstünde mi ?</Text>
       </View>
