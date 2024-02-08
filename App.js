@@ -11,7 +11,7 @@ export default function App() {
       colors={['rgba(0,0,0,0.8)', 'transparent']}
     >
 
-      <ImageBackground  style={[styles.container, styles.backImage]} 
+      <ImageBackground  style={styles.container} 
       source={require('./assets/back.jpg')}
       imageStyle={styles.backImage}
       > 
