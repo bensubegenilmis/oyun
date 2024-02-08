@@ -1,10 +1,11 @@
 import { StyleSheet, Text, View, TextInput, Alert } from 'react-native';
 import React, { useState } from 'react';
 import CustomButton from '../components/CustomButton';
+import Title from '../components/Title';
 
 
 
-export default function GameStartScreen() {
+export default function GameStartScreen({onSendNumber}) {
   
  const [enteredNumber, setEnteredNumber] = useState('')  
 
@@ -16,22 +17,24 @@ export default function GameStartScreen() {
   function confirmHandler () {
     const chosenNumber = parseInt(enteredNumber)
     if(isNaN(chosenNumber) || chosenNumber <= 0 || chosenNumber > 99){
-      Alert.alert('Geçersiz Sayı!', 'Sayı 1 ile 99 arasında olmalıdır', 
+      Alert.alert('Geçersiz Sayı!', 'Girilen sayı 1 ile 99 arasında olmalıdır.', 
       [{text: 'Tamam', style:'destructive', onPress:resetHandler  },
     ]);
+    return;
     }
+    onSendNumber(chosenNumber);
 
   }
 
   function numberHandler (text) {
-    console.log(text);
+    //console.log(text);
     setEnteredNumber(text);
   }
 
 
   return (
     <View style={styles.container}>
-      <Text>Sayı Tahmin Uygulaması</Text>
+      <Title>Sayı Tahmin Uygulaması</Title>
       <View style={styles.card}>
         <TextInput
           style={styles.input}
