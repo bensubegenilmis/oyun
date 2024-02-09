@@ -12,12 +12,13 @@ export default function Title({ children }) {
 const styles = StyleSheet.create({
     title: {
         borderWidth: 2,
-        borderColor: 'red',
+        borderColor: 'fuchsia',
         textAlign: 'center',
         padding: 15,
         marginBottom: 20,
         borderRadius: 20,
         color: 'white',
+        fontWeight:'bold',
         fontSize: 25,
     },
 });

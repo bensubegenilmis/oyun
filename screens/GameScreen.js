@@ -1,18 +1,26 @@
 import { StyleSheet, Text, View ,Alert} from 'react-native';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Title from '../components/Title';
 import ComputerNumber from '../components/ComputerNumber';
 import CustomButton from '../components/CustomButton';
 
+let minNumber =1;
+let maxNumber =100;
 
-export default function GameScreen({userNumber}) {
+
+export default function GameScreen({userNumber, onGameOver}) {
 
   const initialGuess = generateNumber(1,100,userNumber);
 
   const [currentGuess, setCurrentGuess] = useState(initialGuess);
 
-  let minNumber =1;
-  let maxNumber =100;
+  useEffect(() => {
+      if(currentGuess === userNumber){
+        onGameOver();
+        
+      }
+  }, [currentGuess,userNumber,onGameOver ]);
+
 
 
   function nextGuessHandler (direction) {
