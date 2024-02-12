@@ -1,9 +1,10 @@
-import { StyleSheet, Text, View, Alert } from 'react-native';
+import { StyleSheet, Text, View, Alert , FlatList} from 'react-native';
 import React, { useState, useEffect } from 'react';
 import Title from '../components/Title';
 import ComputerNumber from '../components/ComputerNumber';
 import CustomButton from '../components/CustomButton';
 import { Entypo } from '@expo/vector-icons';
+import ComputerGuess from '../components/ComputerGuess';
 
 
 let minNumber = 1;
@@ -81,6 +82,18 @@ export default function GameScreen({ userNumber, onGameOver }) {
           </CustomButton>
         </View>
       </View>
+      <View style={styles.listContainer} >
+        <FlatList 
+        data={guessCounts}
+        keyExtractor={(itemData) => itemData}
+        renderItem={(itemData) => (
+          <ComputerGuess roundNumber = {guessCounts.length -
+          itemData.index}
+          guess= {itemData.item}
+          />
+        )}
+        />
+      </View>
     </View>
   );
 }
@@ -116,4 +129,9 @@ const styles = StyleSheet.create({
     marginBottom: 10,
 
   },
+  listContainer:{
+    flex: 1,
+    marginTop: 10,
+  },
+
 });
