@@ -38,7 +38,7 @@ export default function GameScreen({ userNumber, onGameOver }) {
 
     if ((direction === 'lower' && currentGuess < userNumber) ||
       (direction === 'greater' && currentGuess > userNumber)) {
-      Alert.alert('Hadi Ordam !', 'Yanlış olduğunu bile bile basıyorsun!...',
+      Alert.alert('Hadi Ordan !', 'Yanlış olduğunu bile bile basıyorsun!...',
         [{ text: 'Tamam', style: 'cancel' }]);
       return;
     }
