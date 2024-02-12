@@ -4,7 +4,7 @@ import Title from '../components/Title';
 import CustomButton from '../components/CustomButton';
 
 
-export default function GameOverScreen({roundsNumber, userNumber}) {
+export default function GameOverScreen({roundsNumber, userNumber, onStartNewGame}) {
   return (
     <View style={styles.container}>
       <Title>Congratulations!</Title>
@@ -15,7 +15,7 @@ export default function GameOverScreen({roundsNumber, userNumber}) {
         <Text style={styles.countAndNumber}> {roundsNumber} </Text>denemeyle
         <Text style={styles.countAndNumber}> {userNumber} </Text>sayısını buldun..
       </Text>
-      <CustomButton>Yeni Oyuna Başla</CustomButton>
+      <CustomButton onPress={onStartNewGame}>Yeni Oyuna Başla</CustomButton>
     </View>
   );
 }
