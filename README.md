@@ -1,0 +1,6 @@
+![Screenshot_1707734301](https://github.com/bensubegenilmis/oyun/assets/56439963/9c546f8c-595c-4a78-8a28-4683b0ee8142)
+![Screenshot_1707734305](https://github.com/bensubegenilmis/oyun/assets/56439963/48fbf85b-8eba-47a4-9f42-0292a9063dc5)
+![Screenshot_1707734308](https://github.com/bensubegenilmis/oyun/assets/56439963/055da424-2a6a-42c7-ae7a-7c021cd6b410)
+![Screenshot_1707734314](https://github.com/bensubegenilmis/oyun/assets/56439963/05850f7b-afc4-42ca-a179-b58e853fa766)
+![Screenshot_1707734338](https://github.com/bensubegenilmis/oyun/assets/56439963/8576dea7-885c-488e-a165-873771c732af)
+![Screenshot_1707734341](https://github.com/bensubegenilmis/oyun/assets/56439963/f7c055e6-224a-4f9c-be34-312c16aafc68)
