@@ -16,12 +16,20 @@ export default function GameScreen({ userNumber, onGameOver }) {
 
   const [currentGuess, setCurrentGuess] = useState(initialGuess);
 
+  const [guessCounts, setGuessCounts] = useState([initialGuess])
+
   useEffect(() => {
     if (currentGuess === userNumber) {
-      onGameOver();
+      onGameOver(guessCounts.length);
 
     }
   }, [currentGuess, userNumber, onGameOver]);
+
+  useEffect(() => {
+    minNumber = 1;
+    maxNumber = 100;
+
+  }, []);
 
 
 
@@ -44,6 +52,7 @@ export default function GameScreen({ userNumber, onGameOver }) {
     }
     const newRandomNumber = generateNumber(minNumber, maxNumber, currentGuess);
     setCurrentGuess(newRandomNumber);
+    setGuessCounts((prevGuess) => [newRandomNumber, ...prevGuess])
   }
 
   function generateNumber(min, max, exclude) {
@@ -61,9 +70,9 @@ export default function GameScreen({ userNumber, onGameOver }) {
     <View style={styles.container}>
       <Title>Bilgisayar Tahmini</Title>
       <ComputerNumber>{currentGuess}</ComputerNumber>
-      <View style = {styles.card}>
-        <Text style = {styles.title}>Altında mı üstünde mi ?</Text>
-        <View style = {styles.buttonscontainer}>
+      <View style={styles.card}>
+        <Text style={styles.title}>Altında mı üstünde mi ?</Text>
+        <View style={styles.buttonscontainer}>
           <CustomButton onPress={nextGuessHandler.bind(this, 'lower')}>
             <Entypo name="minus" size={40} color="white" />
           </CustomButton>
@@ -80,28 +89,28 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 30,
-    marginTop:10,
+    marginTop: 10,
 
   },
-  buttonscontainer:{
-    flexDirection:'row',
-  
-   
+  buttonscontainer: {
+    flexDirection: 'row',
+
+
   },
-  card:{
-    backgroundColor:'lightskyblue',
-    padding:16,
+  card: {
+    backgroundColor: 'lightskyblue',
+    padding: 16,
     marginTop: 20,
-    elevation:4,
+    elevation: 4,
     shadowColor: 'black',
-    shadowOffset: { width: 0, height: 2},
+    shadowOffset: { width: 0, height: 2 },
     shadowRadius: 6,
     shadowOpacity: 0.25,
     borderRadius: 20,
-    alignItems:'center',
+    alignItems: 'center',
     justifyContent: 'center',
   },
-  title:{
+  title: {
     color: 'navy',
     fontSize: 23,
     marginBottom: 10,
